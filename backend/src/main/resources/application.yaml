@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: local # Profil auch gesetzt?
+  application:
+    name: capstone # Hier euren Datenbanknamen
+  datasource:
+    url: jdbc:${profile.datasource.url}
+    username: ${profile.datasource.user}
+    password: ${profile.datasource.pass}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    generate-ddl: true
+    open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: false
+
+security:
+  jwt:
+    secret: "MySecret"
+    expiresAfterMinutes: 45

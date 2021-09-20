@@ -1,0 +1,29 @@
+version: "2.1"
+
+# This docker-compose file has to be used for local development.
+# A local running database will be created before the service will be started.
+#
+# @see https://docs.docker.com/compose/overview/
+#
+# docker-compose up -d
+#
+#   ALLE ANGABEN IN KLEINBUCHSTABEN!!
+
+services:
+  capstone-postgres:  #Ändern! (am besten das -postgres stehen lassen)
+    image: postgres:12.4
+    container_name: capstone #Ändern!
+    mem_limit: 50m
+    environment:
+      POSTGRES_PASSWORD: "12345" #Kann man ändern
+      POSTGRES_USER: "admin" #Kann man ändern
+      POSTGRES_DB: "capstone" #Ändern!
+    restart: always
+    ports:
+      - "5432:5432"
+    networks:
+      - local-bridge
+
+networks:
+  local-bridge: # default network
+    driver: bridge

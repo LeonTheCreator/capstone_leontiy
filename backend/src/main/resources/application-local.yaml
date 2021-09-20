@@ -1,0 +1,5 @@
+profile:
+  datasource:
+    url: postgresql://localhost:5432/capstone # Hier Ändern
+    user: admin
+    pass: 12345
