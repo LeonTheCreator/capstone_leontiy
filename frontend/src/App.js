@@ -1,16 +1,16 @@
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
-import Registration from './pages/Registration'
+import Login from './pages/Login'
 import AuthProvider from './auth/AuthProvider'
 import ProtectedRoute from './auth/ProtectedRoute'
+import HomePage from './pages/HomePage'
 
 export default function App() {
   return (
     <AuthProvider>
       <Router>
         <Switch>
-          <Route path="/registration" component={Registration} />
+          <Route path="/login" component={Login} />
           <ProtectedRoute exact path="/" component={HomePage} />
-          <ProtectedRoute path="/change-password" component={ChangePassword} />
         </Switch>
       </Router>
     </AuthProvider>
