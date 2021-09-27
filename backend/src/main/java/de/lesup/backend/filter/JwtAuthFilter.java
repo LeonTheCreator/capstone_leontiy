@@ -44,10 +44,10 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                                         .role(role).build(),
                                 "",
                                 List.of(new SimpleGrantedAuthority(role))
-                        );
+                        ));
             }
         } catch (JwtException e) {
-            //ignore
+            //macht nichts?
         }
 
         filterChain.doFilter(request, response);

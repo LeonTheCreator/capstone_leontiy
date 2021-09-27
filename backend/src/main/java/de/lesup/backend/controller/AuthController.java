@@ -43,6 +43,7 @@ public class AuthController {
     public AuthController(UserService userService, AuthenticationManager authenticationManager, JwtService jwtService) {
         this.userService = userService;
         this.authenticationManager = authenticationManager;
+        this.jwtService = jwtService;
     }
 
     @Operation(summary = "Create JWT Token by credentials.")

@@ -5,7 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_table")
 @Getter
 @Setter
 @Builder(toBuilder = true)
@@ -14,15 +14,15 @@ import javax.persistence.*;
 public class UserEntity {
     @Id
     @GeneratedValue
-    @Column(name = "id", nullable = false)
+    @Column(name = "user_id", nullable = false)
     private Long id;
 
-    @Column(name = "username", nullable = false)
+    @Column(name = "user_username", nullable = false, unique = true)
     private String username;
 
-    @Column(name = "passwort", nullable = false)
+    @Column(name = "user_password", nullable = false)
     private String password;
 
-    @Column(name = "role", nullable = false)
+    @Column(name = "user_role", nullable = false)
     private String role;
 }
