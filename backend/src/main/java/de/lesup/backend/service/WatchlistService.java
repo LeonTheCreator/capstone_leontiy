@@ -30,7 +30,7 @@ public class WatchlistService {
     }
 
     public Optional<WatchlistEntity> deleteWatchListEntity(Long id) {
-        Optional<WatchlistEntity> watchlistEntity = watchlistEntityRepository.findAllById(id);
+        Optional<WatchlistEntity> watchlistEntity = watchlistEntityRepository.findById(id);
         if (watchlistEntity.isPresent()) {
             WatchlistEntity watchlistEntity1 = watchlistEntity.get();
             watchlistEntityRepository.delete(watchlistEntity1);
