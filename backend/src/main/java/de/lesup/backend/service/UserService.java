@@ -5,7 +5,7 @@ import de.lesup.backend.repositories.UserRepository;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -23,5 +23,15 @@ public class UserService {
 
     public Optional<UserEntity> findByUsername(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    public UserEntity create(UserEntity userEntity) {
+        String password = userEntity.getPassword();
+        BCryptPasswordEncoder encodedPW= new BCryptPasswordEncoder();
+        String encode = encodedPW.encode(password);
+        userEntity.setPassword(encode);
+
+        userEntity.setRole("standart");
+        return userRepository.save(userEntity);
     }
 }

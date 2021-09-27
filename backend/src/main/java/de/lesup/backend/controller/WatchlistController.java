@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/watchlist")
@@ -25,7 +26,11 @@ public class WatchlistController {
     }
     @PostMapping
     public WatchlistEntity addWatchlistItem(@RequestBody FrontendWatchlistDto frontendWatchlistDto) {
-        return null;
+        return watchlistService.addWatchlistEntity(frontendWatchlistDto);
+    }
+    @DeleteMapping(value = "/{id}")
+    public Optional<WatchlistEntity> deleteWatchListItem(@PathVariable Long id) {
+        return watchlistService.deleteWatchListEntity(id);
     }
 
 }
