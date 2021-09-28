@@ -1,4 +1,4 @@
-package de.lesup.backend.dto;
+package de.lesup.backend.api;
 
 
 import lombok.*;

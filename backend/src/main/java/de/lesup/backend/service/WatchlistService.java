@@ -1,8 +1,9 @@
 package de.lesup.backend.service;
 
-import de.lesup.backend.dto.FrontendWatchlistDto;
+import de.lesup.backend.api.FrontendWatchlistDto;
 import de.lesup.backend.model.WatchlistEntity;
 import de.lesup.backend.repositories.WatchlistEntityRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,5 +38,14 @@ public class WatchlistService {
         }
         return watchlistEntity;
     }
+    /*public Optional<WatchlistEntity> updateWatchListItem(FrontendWatchlistDto frontendWatchlistDto) {
+        Optional<WatchlistEntity> watchlistEntity = watchlistEntityRepository.findById();
+        if(watchlistEntity.isPresent()) {
+            WatchlistEntity watchlistEntity2 = watchlistEntity.get();
+            watchlistEntityRepository.save()
+        }
+    }
+
+     */
 }
 

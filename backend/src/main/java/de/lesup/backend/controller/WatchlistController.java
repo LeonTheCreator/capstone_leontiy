@@ -1,10 +1,11 @@
 package de.lesup.backend.controller;
 
 
-import de.lesup.backend.dto.FrontendWatchlistDto;
+import de.lesup.backend.api.FrontendWatchlistDto;
 import de.lesup.backend.model.WatchlistEntity;
 import de.lesup.backend.service.WatchlistService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,5 +33,17 @@ public class WatchlistController {
     public Optional<WatchlistEntity> deleteWatchListItem(@PathVariable Long id) {
         return watchlistService.deleteWatchListEntity(id);
     }
+/*
+    @PutMapping("/update/{id}")
+    public ResponseEntity<WatchlistEntity> updateWatchListItem(@PathVariable Long id, @RequestBody FrontendWatchlistDto frontendWatchlistDto) {
 
+        return watchlistService.updateWatchListItem(frontendWatchlistDto);
+    }
+    private WatchlistEntity map(FrontendWatchlistDto frontendWatchlistDto){
+        WatchlistEntity watchlistEntity = WatchlistEntity.builder()
+                .watchlistItemName(frontendWatchlistDto.getWatchlistItemName())
+                .wkn().build()
+    }
+
+    */
 }
