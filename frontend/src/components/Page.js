@@ -6,8 +6,8 @@ export default styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--background-light);
-  color: var(--neutral-light);
+  background: grey;
+  color: gold;
 
   display: grid;
   place-items: center;
