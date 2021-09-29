@@ -38,14 +38,20 @@ public class WatchlistService {
         }
         return watchlistEntity;
     }
-    /*public Optional<WatchlistEntity> updateWatchListItem(FrontendWatchlistDto frontendWatchlistDto) {
-        Optional<WatchlistEntity> watchlistEntity = watchlistEntityRepository.findById();
-        if(watchlistEntity.isPresent()) {
-            WatchlistEntity watchlistEntity2 = watchlistEntity.get();
-            watchlistEntityRepository.save()
+
+    public WatchlistEntity updateWatchListItem(Long id, FrontendWatchlistDto frontendWatchlistDto) {
+        Optional<WatchlistEntity> optionalWatchlistEntity = watchlistEntityRepository.findById(id);
+        if (optionalWatchlistEntity.isEmpty()) {
+            throw new RuntimeException();
+
         }
+        WatchlistEntity watchlistEntity = optionalWatchlistEntity.get();
+        watchlistEntity.setWatchlistItemName(frontendWatchlistDto.getWatchlistItemName());
+        watchlistEntity.setIsin(frontendWatchlistDto.getIsin());
+        watchlistEntity.setWkn(frontendWatchlistDto.getWkn());
+        return watchlistEntityRepository.save(watchlistEntity);
     }
 
-     */
+
 }
 
