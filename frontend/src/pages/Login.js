@@ -6,15 +6,6 @@ import Page from '../components/Page'
 import { useState } from 'react'
 import { useAuth } from '../auth/AuthProvider'
 import { Redirect } from 'react-router-dom'
-/*
-const initialState = {
-  username: '',
-  password: '',
-}
-
-const [credentials, setCredentials] = useState(initialState)
-const [error, setError] = useState()
-*/
 
 export default function Login() {
   const { login, user } = useAuth()
