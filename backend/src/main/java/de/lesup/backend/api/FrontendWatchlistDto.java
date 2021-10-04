@@ -9,6 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Data
 public class FrontendWatchlistDto {
     String watchlistItemName;
     String wkn;
