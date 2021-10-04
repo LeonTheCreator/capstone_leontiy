@@ -8,6 +8,7 @@ export default styled.div`
   height: 100%;
   background: grey;
   color: gold;
+  background-image: ;
 
   display: grid;
   place-items: center;

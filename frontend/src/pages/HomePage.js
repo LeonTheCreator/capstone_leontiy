@@ -1,4 +1,3 @@
-
 import Main from '../components/Main'
 import Header from '../components/Header'
 import Page from '../components/Page'
@@ -40,19 +39,19 @@ export default function HomePage() {
         <Header title="Watchlist" />
         <Main as="form" onSubmit={handleSubmit}>
           <TextField
-            title="WatchListItemName"
+            title="Name des Titels"
             name="watchListItemName"
             value={watchListItemName}
             onChange={handleWatchListItemNameChange}
           />
           <TextField
-            title="Wkn"
+            title="WKN"
             name="wkn"
             value={wkn}
             onChange={handleWknChange}
           />
           <TextField
-            title="Isin"
+            title="ISIN"
             name="isin"
             value={isin}
             onChange={handleIsinChange}

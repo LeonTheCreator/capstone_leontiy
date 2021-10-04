@@ -32,7 +32,7 @@ export default function Login() {
   }
   return (
     <Page>
-      <Header title="Login" />
+      <Header title="Login zur Watchlist" />
       <Main as="form" onSubmit={handleSubmit}>
         <TextField
           title="Username"
