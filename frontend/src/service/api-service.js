@@ -19,9 +19,6 @@ export const addWatchListItem = (frontendWatchListDto, token) =>
 
 export const deleteWatchListItem = (id, token) =>
   axios.delete(`/watchlist/${id}`, headers(token))
-/*
-export const updateWatchListItem = (frontendWatchListDto, token) =>
+
+export const updateWatchListItem = (frontendWatchListDto, id, token) =>
   axios.put(`watchlist/${id}`, headers(token))
-
-
- */

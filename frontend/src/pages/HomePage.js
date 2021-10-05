@@ -4,20 +4,24 @@ import Page from '../components/Page'
 import TextField from '../components/TextField'
 import { useState } from 'react'
 import Button from '../components/Button'
+import { addWatchListItem } from '../service/api-service'
+import { useAuth } from '../auth/AuthProvider'
 
 export default function HomePage() {
+  const { token } = useAuth()
   const handleSubmit = event => {
     event.preventDefault()
-    const frontendWatchListDto = { watchListItemName, wkn, isin }
+    const frontendWatchListDto = { watchlistItemName, wkn, isin }
+    addWatchListItem(frontendWatchListDto, token)
     //irgendwas muss ich hier noch machen, keinen Plan wie ich grau in gelb verwandle
     console.log(frontendWatchListDto)
   }
 
-  const [watchListItemName, setWatchListItemName] = useState('')
+  const [watchlistItemName, setWatchlistItemName] = useState('')
 
   const handleWatchListItemNameChange = event => {
-    const newWatchListItemName = event.target.value
-    setWatchListItemName(newWatchListItemName)
+    const newWatchlistItemName = event.target.value
+    setWatchlistItemName(newWatchlistItemName)
   }
 
   const [wkn, setWkn] = useState('')
@@ -40,8 +44,8 @@ export default function HomePage() {
         <Main as="form" onSubmit={handleSubmit}>
           <TextField
             title="Name des Titels"
-            name="watchListItemName"
-            value={watchListItemName}
+            name="watchlistItemName"
+            value={watchlistItemName}
             onChange={handleWatchListItemNameChange}
           />
           <TextField
