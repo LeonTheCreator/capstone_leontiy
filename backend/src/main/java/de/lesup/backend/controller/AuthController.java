@@ -52,7 +52,7 @@ public class AuthController {
             @ApiResponse(code = SC_BAD_REQUEST, message = "Username or password blank"),
             @ApiResponse(code = SC_UNAUTHORIZED, message = "Username or password is wrong")
     })
-    public ResponseEntity<AccessToken> getAccessToken(@RequestBody Credentials credentials) {
+        public ResponseEntity<AccessToken> getAccessToken(@RequestBody Credentials credentials) {
         String username = credentials.getUsername();
         //hastext später hinzufügen, wegen illegal Argument exception
         String password = credentials.getPassword();
